@@ -35,11 +35,11 @@ class ConcatTest extends TestCase
 
     public function testAssocWithStringkeysCase()
     {
-        // ignored keys on param but remaining keys on base array
         $result = collect(['a' => 1, 'b' => 2, 'c' => 3,])
             ->concat(['d' => 3, 'e' => 6, 'f' => 9, ])
         ;
 
+        // ignored keys on param array. but remaining keys on base array
         $this->assertEquals(
             ['a' => 1, 'b' => 2, 'c' => 3, 0 => 3, 1 => 6, 2 => 9,],
             $result->toArray()
@@ -48,7 +48,6 @@ class ConcatTest extends TestCase
 
     public function testAssocWithIntegerkeysCase()
     {
-        // not key but position
         $result = collect([2 => 'b', 3 => 'c', 1 => 'a',])
             ->concat([1 => 'd', 2 => 'e', 3 => 'f',])
         ;
