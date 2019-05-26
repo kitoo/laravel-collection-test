@@ -26,11 +26,6 @@ class ConcatTest extends TestCase
         $result = collect([1, 2, 3,])
             ->concat(4)
         ;
-
-        $this->assertEquals(
-            [1, 2, 3, 4,],
-            $result->toArray()
-        );
     }
 
     public function testAssocWithStringkeysCase()
@@ -53,7 +48,8 @@ class ConcatTest extends TestCase
         ;
 
         $this->assertEquals(
-            [2 => 'b', 3 => 'c', 1 => 'a', 4 => 'd', 5 => 'e', 6 => 'f',], $result->toArray()
+            [2 => 'b', 3 => 'c', 1 => 'a', 4 => 'd', 5 => 'e', 6 => 'f',],
+            $result->toArray()
         );
     }
 }
