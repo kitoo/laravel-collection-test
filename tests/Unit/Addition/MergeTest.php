@@ -14,7 +14,7 @@ class MergeTest extends TestCase
 
         $this->assertEquals(
             [1, 2, 3, 'a', 'b', 'c',],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -27,7 +27,7 @@ class MergeTest extends TestCase
         // not Arrayable param is also OK
         $this->assertEquals(
             [1, 2, 3, 4,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -40,7 +40,7 @@ class MergeTest extends TestCase
         // reserve keys
         $this->assertEquals(
             ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 3, 'e' => 6, 'f' => 9,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -53,7 +53,7 @@ class MergeTest extends TestCase
         // last come, first served
         $this->assertEquals(
             ['a' => 9, 'b' => 3, 'c' => 6,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -66,7 +66,7 @@ class MergeTest extends TestCase
         // reserve not keys but position
         $this->assertEquals(
             [0 => 'b', 1 => 'c', 2 => 'a', 3 => 'd', 4 => 'e', 5 => 'f',],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -79,7 +79,7 @@ class MergeTest extends TestCase
         // reserve not keys but position
         $this->assertEquals(
             [0 => 'b', 1 => 'c', 2 => 'a', 3 => 'd', 4 => 'e', 5 => 'f',],
-            $result->toArray()
+            $result->all()
         );
     }
 }

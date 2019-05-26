@@ -14,7 +14,7 @@ class PutTest extends TestCase
 
         $this->assertEquals(
             [1, 5, 3,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -26,7 +26,7 @@ class PutTest extends TestCase
 
         $this->assertEquals(
             [1 => 'a', 2 => 'b', 3 => 'c', 9 => 'z',],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -39,7 +39,7 @@ class PutTest extends TestCase
         // overwitten
         $this->assertEquals(
             ['a' => 9, 'b' => 2, 'c' => 3,],
-            $result->toArray()
+            $result->all()
         );
     }
 }

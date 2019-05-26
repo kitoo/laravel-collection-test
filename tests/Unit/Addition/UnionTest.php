@@ -15,7 +15,7 @@ class UnionTest extends TestCase
         // not expected result
         $this->assertEquals(
             [1, 2, 3,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -28,7 +28,7 @@ class UnionTest extends TestCase
         // not expected result
         $this->assertEquals(
             [1, 2, 3,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -41,7 +41,7 @@ class UnionTest extends TestCase
         // reserve keys
         $this->assertEquals(
             ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 3, 'e' => 6, 'f' => 9,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -54,7 +54,7 @@ class UnionTest extends TestCase
         // first come, first served
         $this->assertEquals(
             ['a' => 1, 'b' => 2, 'c' => 3,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -67,7 +67,7 @@ class UnionTest extends TestCase
         // first come, first served
         $this->assertEquals(
             [2 => 'b', 3 => 'c', 1 => 'a',],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -80,7 +80,7 @@ class UnionTest extends TestCase
         // first come, first served
         $this->assertEquals(
             ['2' => 'b', '3' => 'c', '1' => 'a',],
-            $result->toArray()
+            $result->all()
         );
     }
 }

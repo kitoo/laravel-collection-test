@@ -17,6 +17,11 @@ class ZipTest extends TestCase
             [[1, 'a',], [2, 'b',], [3, 'c',],],
             $result->toArray()
         );
+        // Inner List is Collection too
+        $this->assertNotEquals(
+            [[1, 'a',], [2, 'b',], [3, 'c',],],
+            $result->all()
+        );
     }
 
     public function testAssocCase()
@@ -29,6 +34,11 @@ class ZipTest extends TestCase
         $this->assertEquals(
             [[1, 3,], [2, 6,], [3, 9,],],
             $result->toArray()
+        );
+        // Inner List is Collection too
+        $this->assertNotEquals(
+            [[1, 3,], [2, 6,], [3, 9,],],
+            $result->all()
         );
     }
 
@@ -44,6 +54,11 @@ class ZipTest extends TestCase
             [[[1, 'a',], 'A',], [[2, 'b',], 'B',], [[3, 'c',], 'C',],],
             $result->toArray()
         );
+        // Inner List is Collection too
+        $this->assertNotEquals(
+            [[[1, 'a',], 'A',], [[2, 'b',], 'B',], [[3, 'c',], 'C',],],
+            $result->all()
+        );
     }
 
     public function testCorrectMultipleCase()
@@ -56,6 +71,11 @@ class ZipTest extends TestCase
             [[1, 'a', 'A',], [2, 'b', 'B',], [3, 'c', 'C',],],
             $result->toArray()
         );
+        // Inner List is Collection too
+        $this->assertNotEquals(
+            [[1, 'a', 'A',], [2, 'b', 'B',], [3, 'c', 'C',],],
+            $result->all()
+        );
     }
 
     public function testRidiculousCase()
@@ -67,6 +87,11 @@ class ZipTest extends TestCase
         $this->assertEquals(
             [[1, 'a', 'b', 'c',], [2, null, null, null,], [3, null, null, null,],],
             $result->toArray()
+        );
+        // Inner List is Collection too
+        $this->assertNotEquals(
+            [[1, 'a', 'b', 'c',], [2, null, null, null,], [3, null, null, null,],],
+            $result->all()
         );
     }
 
@@ -96,7 +121,7 @@ class ZipTest extends TestCase
         );
         $this->assertEquals(
             ['1-a-A', '2-b-B', '3-c-C',],
-            $smartResult->toArray()
+            $smartResult->all()
         );
     }
 }

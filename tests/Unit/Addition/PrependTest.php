@@ -14,7 +14,7 @@ class PrependTest extends TestCase
 
         $this->assertEquals(
             [0, 1, 2, 3,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -26,7 +26,7 @@ class PrependTest extends TestCase
 
         $this->assertEquals(
             [9 => 'z', 1 => 'a', 2 => 'b', 3 => 'c',],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -39,7 +39,7 @@ class PrependTest extends TestCase
         // overwitten & moved at first
         $this->assertEquals(
             ['c' => 9, 'a' => 1, 'b' => 2,],
-            $result->toArray()
+            $result->all()
         );
     }
 }

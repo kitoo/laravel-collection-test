@@ -14,7 +14,7 @@ class PadTest extends TestCase
 
         $this->assertEquals(
             [1, 2, 3, 'a', 'a',],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -26,7 +26,7 @@ class PadTest extends TestCase
 
         $this->assertEquals(
             ['a', 'a', 1, 2, 3,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -38,7 +38,7 @@ class PadTest extends TestCase
 
         $this->assertEquals(
             [1, 2, 3, ['a', 'b',], ['a', 'b',],],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -53,11 +53,11 @@ class PadTest extends TestCase
 
         $this->assertEquals(
             $resultOfFill,
-            $resultOfPad->toArray()
+            $resultOfPad->all()
         );
         $this->assertEquals(
             ['abc', 'abc', 'abc', 'abc', 'abc',],
-            $resultOfPad->toArray()
+            $resultOfPad->all()
         );
     }
 

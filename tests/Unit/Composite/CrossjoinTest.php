@@ -19,7 +19,7 @@ class CrossjoinTest extends TestCase
                 [2, 'a',], [2, 'b',], [2, 'c',],
                 [3, 'a',], [3, 'b',], [3, 'c',],
             ],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -36,7 +36,7 @@ class CrossjoinTest extends TestCase
                 [2, 3,], [2, 6,], [2, 9,],
                 [3, 3,], [3, 6,], [3, 9,],
             ],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -55,7 +55,7 @@ class CrossjoinTest extends TestCase
                 [[2, 'a',], 'A',], [[2, 'a',], 'B',],
                 [[2, 'b',], 'A',], [[2, 'b',], 'B',],
             ],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -72,7 +72,7 @@ class CrossjoinTest extends TestCase
                 [2, 'a', 'A',], [2, 'a', 'B',],
                 [2, 'b', 'A',], [2, 'b', 'B',],
             ],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -84,7 +84,7 @@ class CrossjoinTest extends TestCase
 
         $this->assertEquals(
             [[1, 'a', 'b', 'c',], [2, 'a', 'b', 'c',], [3, 'a', 'b', 'c',],],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -123,7 +123,7 @@ class CrossjoinTest extends TestCase
                 '2-a-A', '2-a-B',
                 '2-b-A', '2-b-B',
             ],
-            $smartResult->toArray()
+            $smartResult->all()
         );
     }
 }

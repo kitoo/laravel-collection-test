@@ -14,7 +14,7 @@ class PushTest extends TestCase
 
         $this->assertEquals(
             [1, 2, 3, 0,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -26,7 +26,7 @@ class PushTest extends TestCase
 
         $this->assertEquals(
             ['a' => 1, 'b' => 2, 'c' => 3, 0 => 'z',],
-            $result->toArray()
+            $result->all()
         );
     }
 }

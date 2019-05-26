@@ -15,7 +15,7 @@ class CombineTest extends TestCase
 
         $this->assertEquals(
             [1 => 'a', 2 => 'b', 3 => 'c',],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -26,6 +26,9 @@ class CombineTest extends TestCase
         ;
 
         // not key but position
-        $this->assertEquals([1 => 3, 2 => 6, 3 => 9,], $result->toArray());
+        $this->assertEquals(
+            [1 => 3, 2 => 6, 3 => 9,],
+            $result->all()
+        );
     }
 }

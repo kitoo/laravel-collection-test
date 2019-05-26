@@ -14,7 +14,7 @@ class ConcatTest extends TestCase
 
         $this->assertEquals(
             [1, 2, 3, 'a', 'b', 'c',],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -37,7 +37,7 @@ class ConcatTest extends TestCase
         // ignored keys on param array. but remaining keys on base array
         $this->assertEquals(
             ['a' => 1, 'b' => 2, 'c' => 3, 0 => 3, 1 => 6, 2 => 9,],
-            $result->toArray()
+            $result->all()
         );
     }
 
@@ -49,7 +49,7 @@ class ConcatTest extends TestCase
 
         $this->assertEquals(
             [2 => 'b', 3 => 'c', 1 => 'a', 4 => 'd', 5 => 'e', 6 => 'f',],
-            $result->toArray()
+            $result->all()
         );
     }
 }
