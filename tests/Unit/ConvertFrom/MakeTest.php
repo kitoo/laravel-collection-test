@@ -38,4 +38,15 @@ class MakeTest extends TestCase
         );
     }
 
+    public function testNullCase()
+    {
+        $result = Collection::make(null);
+
+        // if param is null, result is empty.
+        $this->assertEquals(
+            collect(),
+            $result
+        );
+    }
+
 }

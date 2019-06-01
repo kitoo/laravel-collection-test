@@ -38,4 +38,15 @@ class WrapTest extends TestCase
         );
     }
 
+    public function testNullCase()
+    {
+        $result = Collection::wrap(null);
+
+        // if param is null, result is empty.
+        $this->assertEquals(
+            collect(),
+            $result
+        );
+    }
+
 }
