@@ -18,7 +18,7 @@ class PushTest extends TestCase
         );
     }
 
-    public function testSimpleCaseWithKey()
+    public function testAssocCase()
     {
         $result = collect(['a' => 1, 'b' => 2, 'c' => 3,])
             ->push('z')

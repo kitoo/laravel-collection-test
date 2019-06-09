@@ -8,20 +8,36 @@ class HasTest extends TestCase
 {
     public function testSimpleTruthyCase()
     {
-        $result = collect(['a', 'b', 'c',])
+        $resultOfKeysContains = collect(['a', 'b', 'c',])
+            ->keys()
+            ->contains(2)
+        ;
+        $resultOfHas = collect(['a', 'b', 'c',])
             ->has(2)
         ;
 
-        $this->assertTrue($result);
+        $this->assertEquals(
+            $resultOfKeysContains,
+            $resultOfHas
+        );
+        $this->assertTrue($resultOfHas);
     }
 
     public function testSimpleFalsyCase()
     {
-        $result = collect(['a', 'b', 'c',])
+        $resultOfKeysContains = collect(['a', 'b', 'c',])
+            ->keys()
+            ->contains(3)
+        ;
+        $resultOfHas = collect(['a', 'b', 'c',])
             ->has(3)
         ;
 
-        $this->assertFalse($result);
+        $this->assertEquals(
+            $resultOfKeysContains,
+            $resultOfHas
+        );
+        $this->assertFalse($resultOfHas);
     }
 
     public function testAssocTruthyCase()
